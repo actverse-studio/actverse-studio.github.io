@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ACTVERSE株式会社</title>
+<meta name="description" content="コミュニケーションが最高に楽しい世界を創るACTVERSE株式会社のホームページです">
+<meta property="og:title" content="ACTVERSE株式会社">
+<meta property="og:description" content="コミュニケーションが最高に楽しい世界を創るACTVERSE株式会社のホームページです">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Noto Sans JP', sans-serif; color: #111; background: #fff; overflow-x: hidden; }
+.en { font-family: 'Josefin Sans', sans-serif; letter-spacing: 0.15em; }
+
+/* Header */
+header {
+  position: fixed; top: 0; left: 0; width: 100%; z-index: 100;
+  background: #ffdb00; padding: 16px 40px;
+}
+header a { text-decoration: none; color: #111; font-family: 'Josefin Sans', sans-serif; font-weight: 700; font-size: 20px; letter-spacing: 0.1em; }
+
+/* Hero */
+.hero {
+  background: #111; color: #fff; padding: 160px 40px 120px;
+  min-height: 80vh; display: flex; flex-direction: column; justify-content: center;
+  max-width: 100%;
+}
+.hero-label { font-family: 'Josefin Sans', sans-serif; letter-spacing: 0.2em; font-size: 14px; margin-bottom: 32px; color: #ccc; }
+.hero h1 { font-size: 48px; font-weight: 900; line-height: 1.5; }
+.hero-bottom { height: 8px; background: #ffdb00; }
+
+/* Section: About */
+.about {
+  padding: 100px 40px; max-width: 1280px; margin: 0 auto;
+  display: flex; align-items: center; gap: 60px;
+  position: relative;
+}
+.about-text { flex: 1; }
+.about-text h2 { font-size: 32px; font-weight: 900; line-height: 1.6; margin-bottom: 32px; }
+.about-text p { font-size: 15px; line-height: 2; color: #444; margin-bottom: 16px; }
+.about-image { flex: 1; position: relative; }
+.about-image img {
+  width: 100%; border-radius: 4px; position: relative; z-index: 2;
+  border: 4px solid #ffdb00;
+}
+.about-blob {
+  position: absolute; top: -60px; right: -80px; width: 400px; height: 400px;
+  background: #fff8d6; border-radius: 50% 50% 50% 50% / 60% 40% 60% 40%;
+  z-index: 1;
+}
+
+/* Photo banner */
+.photo-banner {
+  width: 100%; height: 400px; overflow: hidden;
+  display: flex;
+}
+.photo-banner img {
+  width: 33.333%; height: 100%; object-fit: cover;
+}
+
+/* Section: Possibility */
+.possibility {
+  padding: 100px 40px; max-width: 1280px; margin: 0 auto;
+  display: flex; align-items: center; gap: 60px;
+  position: relative;
+}
+.possibility-image { flex: 1; position: relative; }
+.possibility-image img {
+  width: 100%; border-radius: 4px;
+  border: 4px solid #ffdb00;
+}
+.possibility-blob {
+  position: absolute; top: -40px; left: -100px; width: 350px; height: 350px;
+  background: #fff8d6; border-radius: 50% 50% 50% 50% / 40% 60% 40% 60%;
+  z-index: -1;
+}
+.possibility-text { flex: 1; }
+.possibility-text h2 { font-size: 32px; font-weight: 900; line-height: 1.5; margin-bottom: 32px; }
+.possibility-text p { font-size: 15px; line-height: 2; color: #444; margin-bottom: 16px; }
+
+/* Company */
+.company {
+  padding: 100px 40px; max-width: 1280px; margin: 0 auto;
+}
+.company h2 {
+  font-family: 'Josefin Sans', sans-serif; font-size: 28px; font-weight: 700;
+  letter-spacing: 0.15em; margin-bottom: 48px;
+}
+.company-table {
+  width: 100%; border-collapse: collapse;
+}
+.company-table tr {
+  border-bottom: 1px solid #ddd;
+}
+.company-table th, .company-table td {
+  padding: 24px 16px; text-align: left; font-size: 15px;
+}
+.company-table th {
+  width: 150px; font-weight: 700; white-space: nowrap;
+}
+.company-table td {
+  color: #444;
+}
+
+/* Footer */
+footer {
+  background: #ffdb00; padding: 60px 40px 40px;
+}
+.footer-inner { max-width: 1280px; margin: 0 auto; }
+.footer-name {
+  font-family: 'Josefin Sans', sans-serif; font-weight: 700; font-size: 20px;
+  letter-spacing: 0.1em; margin-bottom: 24px;
+}
+.footer-address {
+  font-family: 'Josefin Sans', sans-serif; font-size: 14px; line-height: 1.8;
+  color: #333; margin-bottom: 40px;
+}
+.footer-copy {
+  font-family: 'Josefin Sans', sans-serif; font-size: 12px; color: #555;
+  text-align: right; letter-spacing: 0.1em;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero { padding: 120px 24px 80px; }
+  .hero h1 { font-size: 28px; }
+  .about, .possibility { flex-direction: column; padding: 60px 24px; gap: 40px; }
+  .about-blob, .possibility-blob { display: none; }
+  .photo-banner { height: 200px; }
+  .company { padding: 60px 24px; }
+  footer { padding: 40px 24px 30px; }
+}
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+  <a href="/">ACTVERSE</a>
+</header>
+
+<!-- Hero -->
+<div class="hero">
+  <p class="hero-label">OUR VISION</p>
+  <h1>コミュニケーションが<br>最高に楽しい世界を創る</h1>
+</div>
+<div class="hero-bottom"></div>
+
+<!-- About -->
+<section class="about">
+  <div class="about-text">
+    <h2>ゲームのチカラで<br>"コミュニケーション"を<br>もっと楽しく</h2>
+    <p>わたしたちは、様々なコミュニティに向けてゲームのチカラで"コミュニケーションがもっと楽しくなる"体験をつくっていくゲームクリエイティブカンパニーです。</p>
+    <p>コミュニケーションがもっと楽しく、わくわくするような最高コミュニティづくりを応援しています。</p>
+  </div>
+  <div class="about-image">
+    <div class="about-blob"></div>
+    <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&h=400&fit=crop" alt="コミュニケーション">
+  </div>
+</section>
+
+<!-- Photo Banner -->
+<div class="photo-banner">
+  <img src="https://images.unsplash.com/photo-1511988617509-a57c8a288659?w=600&h=400&fit=crop" alt="チームワーク">
+  <img src="https://images.unsplash.com/photo-1610890716171-6b1bb98ffd09?w=600&h=400&fit=crop" alt="テーブルゲーム">
+  <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600&h=400&fit=crop" alt="コミュニティ">
+</div>
+
+<!-- Possibility -->
+<section class="possibility">
+  <div class="possibility-blob"></div>
+  <div class="possibility-image">
+    <img src="https://images.unsplash.com/photo-1592840496694-26d035b52b48?w=600&h=400&fit=crop" alt="ゲームコントローラー">
+  </div>
+  <div class="possibility-text">
+    <h2>コミュニケーション<br>×ゲームの可能性</h2>
+    <p>わたしたちは、オンラインマルチプレイを軸としたゲームを創造し、様々なコミュニティでのコミュニケーションを最高に楽しいエンタメにすることを目指しています。</p>
+    <p>ゲームSNS、ライブ配信プラットフォーム、メタバース、コレクティブルNFTなど様々なコミュニティの形にあったゲームを提供することで楽しい世界をつくります。</p>
+  </div>
+</section>
+
+<!-- Company -->
+<section class="company">
+  <h2 class="en">COMPANY</h2>
+  <table class="company-table">
+    <tr><th>名称</th><td>Actverse株式会社</td></tr>
+    <tr><th>設立</th><td>2022年4月</td></tr>
+    <tr><th>事業内容</th><td>コミュニケーションゲームの企画開発<br>コミュニティの開発</td></tr>
+    <tr><th>代表取締役</th><td>山本 いづみ</td></tr>
+  </table>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-name">ACTVERSE</div>
+    <div class="footer-address">3-13-23, Tagara, Nerima-ku, Tokyo,<br>179-0073, Japan</div>
+    <div class="footer-copy">&copy;2022 ACTVERSE.</div>
+  </div>
+</footer>
+
+</body>
+</html>
